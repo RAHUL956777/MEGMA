@@ -115,3 +115,39 @@ body {
   font-family: b;
   font-size: 16px;
 }
+
+#page2{
+  display: flex;
+  align-items: start;
+  font-family: a;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  padding: 0vw 8vw;
+  color: #fff;
+  background-color: #0a3cce;
+}
+#page2>h2{
+  margin-bottom: 3vw;
+font-weight: 100;
+}
+#page2>h1{
+  width: 90%;
+  font-size: 4vw;
+  font-weight: 100;
+  line-height: 1.2;
+  color: #dadada69;
+}
+#page3{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0b48ed ;
+}
+#page3>canvas{
+  max-height: 100vh;
+  max-width: 100vw;
+  position: relative;
+}
