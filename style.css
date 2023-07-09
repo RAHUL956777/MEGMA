@@ -170,6 +170,7 @@ font-weight: 100;
   margin-left: 10vw;
   margin-bottom: 2vw;
   font-weight: 100;
+  color: #fff;
 }
 
 #page4>h1{
@@ -190,4 +191,31 @@ font-weight: 100;
   position: relative;
   max-width: 100vw;
   max-height: 100vh;
+}
+
+#page6{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a3cce;
+  color:rgba(255, 255, 255, 0.444);
+  font-family: a;
+}
+#page6>h3{
+  margin-left: 10vw;
+  margin-bottom: 2vw;
+  font-weight: 100;
+  color: #fff;
+}
+
+#page6>h1{
+  margin-left: 10vw;
+  width: 83%;
+  font-size: 4vw;
+  font-weight: 100;
+  line-height: 1.2;
 }
