@@ -219,3 +219,40 @@ font-weight: 100;
   font-weight: 100;
   line-height: 1.2;
 }
+
+#page7{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a3cce;
+}
+
+#page7>canvas{
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#page7>.page7-crl{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9;
+  height: 25vw;
+  width: 25vw;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.page7-crl-inner{
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid white;
+
+}
