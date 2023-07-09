@@ -63,22 +63,21 @@ gsap.to("#page2>h1>span", {
 });
 
 // code for page 3 canvas
-function canvas(){
+function canvas() {
   const canvas = document.querySelector("#page3>canvas");
-const context = canvas.getContext("2d");
+  const context = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
 
-window.addEventListener("resize", function () {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-render();
-});
-
-function files(index) {
-var data = `
+  function files(index) {
+    var data = `
 ./images/frames00007.png
 ./images/frames00010.png
 ./images/frames00013.png
@@ -146,69 +145,240 @@ var data = `
 ./images/frames00199.png
 ./images/frames00202.png
 `;
-return data.split("\n")[index];
+    return data.split("\n")[index];
+  }
+
+  const frameCount = 67;
+
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: `#page3`,
+      start: `top top`,
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: "#page3",
+    pin: true,
+    scroller: `#main`,
+    start: `top top`,
+    end: `250% top`,
+  });
 }
+canvas();
 
-const frameCount = 67;
+var clutter = "";
 
-const images = [];
-const imageSeq = {
-frame: 1,
-};
+document
+  .querySelector("#page4>h1")
+  .textContent.split("")
+  .forEach(function (dets) {
+    clutter += `<span>${dets}</span>`;
 
-for (let i = 0; i < frameCount; i++) {
-const img = new Image();
-img.src = files(i);
-images.push(img);
-}
+    document.querySelector("#page4>h1").innerHTML = clutter;
+  });
 
-gsap.to(imageSeq, {
-frame: frameCount - 1,
-snap: "frame",
-ease: `none`,
-scrollTrigger: {
-  scrub: .5,
-  trigger: `#page3`,
-  start: `top top`,
-  end: `250% top`,
-  scroller: `#main`,
-},
-onUpdate: render,
+gsap.to("#page4>h1>span", {
+  scrollTrigger: {
+    trigger: `#page4>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: 0.5,
+  },
+  stagger: 0.2,
+  color: `#fff`,
 });
 
-images[1].onload = render;
+function canvas1() {
+  const canvas = document.querySelector("#page5>canvas");
+  const context = canvas.getContext("2d");
 
-function render() {
-scaleImage(images[imageSeq.frame], context);
-}
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-function scaleImage(img, ctx) {
-var canvas = ctx.canvas;
-var hRatio = canvas.width / img.width;
-var vRatio = canvas.height / img.height;
-var ratio = Math.max(hRatio, vRatio);
-var centerShift_x = (canvas.width - img.width * ratio) / 2;
-var centerShift_y = (canvas.height - img.height * ratio) / 2;
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-ctx.drawImage(
-  img,
-  0,
-  0,
-  img.width,
-  img.height,
-  centerShift_x,
-  centerShift_y,
-  img.width * ratio,
-  img.height * ratio
-);
-}
-ScrollTrigger.create({
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
 
-trigger: "#page3",
-pin: true,
-scroller: `#main`,
-start: `top top`,
-end: `250% top`,
-});
+  function files(index) {
+    var datas = `
+  ./images/bridges00007.png
+  ./images/bridges00010.png
+  ./images/bridges00004.png
+  ./images/bridges00013.png
+  ./images/bridges00016.png
+  ./images/bridges00019.png
+  ./images/bridges00022.png
+  ./images/bridges00025.png
+  ./images/bridges00028.png
+  ./images/bridges00031.png
+  ./images/bridges00034.png
+  ./images/bridges00037.png
+  ./images/bridges00040.png
+  ./images/bridges00043.png
+  ./images/bridges00046.png
+  ./images/bridges00049.png
+  ./images/bridges00052.png
+  ./images/bridges00055.png
+  ./images/bridges00058.png
+  ./images/bridges00061.png
+  ./images/bridges00064.png
+  ./images/bridges00067.png
+  ./images/bridges00070.png
+  ./images/bridges00073.png
+  ./images/bridges00076.png
+  ./images/bridges00079.png
+  ./images/bridges00082.png
+  ./images/bridges00085.png
+  ./images/bridges00088.png
+  ./images/bridges00091.png
+  ./images/bridges00094.png
+  ./images/bridges00097.png
+  ./images/bridges00100.png
+  ./images/bridges00103.png
+  ./images/bridges00106.png
+  ./images/bridges00109.png
+  ./images/bridges00112.png
+  ./images/bridges00115.png
+  ./images/bridges00118.png
+  ./images/bridges00121.png
+  ./images/bridges00124.png
+  ./images/bridges00127.png
+  ./images/bridges00130.png
+  ./images/bridges00133.png
+  ./images/bridges00136.png
+  ./images/bridges00139.png
+  ./images/bridges00142.png
+  ./images/bridges00145.png
+  ./images/bridges00148.png
+  ./images/bridges00151.png
+  ./images/bridges00154.png
+  ./images/bridges00157.png
+  ./images/bridges00160.png
+  ./images/bridges00163.png
+  ./images/bridges00166.png
+  ./images/bridges00169.png
+  ./images/bridges00172.png
+  ./images/bridges00175.png
+  ./images/bridges00178.png
+  ./images/bridges00181.png
+  ./images/bridges00184.png
+  ./images/bridges00187.png
+  ./images/bridges00190.png
+  ./images/bridges00193.png
+  ./images/bridges00196.png
+  ./images/bridges00199.png
+  ./images/bridges00202.png
+  `;
+    return datas.split("\n")[index];
+  }
+
+  const frameCount = 67;
+
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: `#page5`,
+      start: `top top`,
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: "#page5",
+    pin: true,
+    scroller: `#main`,
+    start: `top top`,
+    end: `250% top`,
+  });
 }
-canvas()
+canvas1();
