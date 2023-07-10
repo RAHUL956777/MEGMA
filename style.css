@@ -12,17 +12,17 @@ body {
 
 @font-face {
   font-family: a;
-  src: url('/jost-variable.ttf');
+  src: url("/jost-variable.ttf");
 }
 
 @font-face {
   font-family: b;
-  src: url('/KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf');
+  src: url("/KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf");
 }
 
 @font-face {
   font-family: c;
-  src: url('/KFOmCnqEu92Fr1Mu4mxK\\(1\).ttf');
+  src: url("/KFOmCnqEu92Fr1Mu4mxK\\(1\).ttf");
 }
 
 #main {
@@ -117,7 +117,7 @@ body {
   font-size: 16px;
 }
 
-#page2{
+#page2 {
   display: flex;
   align-items: start;
   font-family: a;
@@ -130,30 +130,30 @@ body {
   color: #fff;
   background-color: #0a3cce;
 }
-#page2>h2{
+#page2 > h2 {
   margin-bottom: 3vw;
-font-weight: 100;
+  font-weight: 100;
 }
-#page2>h1{
+#page2 > h1 {
   width: 90%;
   font-size: 4vw;
   font-weight: 100;
   line-height: 1.2;
   color: #dadada69;
 }
-#page3{
+#page3 {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #0b48ed ;
+  background-color: #0b48ed;
 }
-#page3>canvas{
+#page3 > canvas {
   max-height: 100vh;
   max-width: 100vw;
   position: relative;
 }
 
-#page4{
+#page4 {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -166,14 +166,14 @@ font-weight: 100;
   font-family: a;
 }
 
-#page4>h3{
+#page4 > h3 {
   margin-left: 10vw;
   margin-bottom: 2vw;
   font-weight: 100;
   color: #fff;
 }
 
-#page4>h1{
+#page4 > h1 {
   margin-left: 10vw;
   width: 83%;
   font-size: 4vw;
@@ -181,19 +181,19 @@ font-weight: 100;
   line-height: 1.3;
 }
 
-#page5{
+#page5 {
   position: relative;
   height: 100vh;
   width: 100vw;
 }
 
-#page5>canvas{
+#page5 > canvas {
   position: relative;
   max-width: 100vw;
   max-height: 100vh;
 }
 
-#page6{
+#page6 {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -202,17 +202,17 @@ font-weight: 100;
   width: 100vw;
   height: 100vh;
   background-color: #0a3cce;
-  color:rgba(255, 255, 255, 0.444);
+  color: rgba(255, 255, 255, 0.444);
   font-family: a;
 }
-#page6>h3{
+#page6 > h3 {
   margin-left: 10vw;
   margin-bottom: 2vw;
   font-weight: 100;
   color: #fff;
 }
 
-#page6>h1{
+#page6 > h1 {
   margin-left: 10vw;
   width: 83%;
   font-size: 4vw;
@@ -220,39 +220,117 @@ font-weight: 100;
   line-height: 1.2;
 }
 
-#page7{
+#page7 {
   position: relative;
   height: 100vh;
   width: 100vw;
   background-color: #0a3cce;
 }
 
-#page7>canvas{
+#page7 > canvas {
   position: relative;
   max-width: 100vw;
   max-height: 100vh;
 }
 
-#page7>.page7-crl{
+#page7 > .page7-crl {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 9;
-  height: 25vw;
-  width: 25vw;
+  height: 20vw;
+  width: 20vw;
   border-radius: 50%;
   border: 1px solid white;
 }
 
-.page7-crl-inner{
+.page7-crl-inner {
   height: 70%;
   width: 70%;
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid white;
+}
 
+#page8 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a3cce;
+}
+
+#page8 > video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.page8-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.page8-bottom > h1 {
+  color: white;
+  font-family: a;
+  margin-bottom: 2vw;
+  font-size: 5vw;
+  font-weight: 100;
+}
+
+.page8-bottom > button {
+  padding: 20px 30px;
+  border-radius: 50px;
+  border: none;
+  color: #0a3cce;
+}
+
+#page9 {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a3cce;
+}
+
+.left9 {
+  position: relative;
+  height: 100%;
+  width: 40%;
+  font-family: a;
+}
+
+.right9 {
+  position: relative;
+  height: 100%;
+  width: 60%;
+}
+
+.left9 > h1 {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-size: 5vw;
+  font-weight: 100;
+  color: #fff;
+  line-height: 1;
+}
+
+.right9-center {
+  height: 62%;
+  width: 85%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg);
+  background-size: cover;
 }

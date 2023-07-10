@@ -624,3 +624,25 @@ https://thisismagma.com/assets/home/lore/seq/136.webp?2
   });
 }
 canvas2();
+
+gsap.to(".page7-crl", {
+  scrollTrigger: {
+    trigger: `.page7-crl`,
+    start: `top center`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: 0.5,
+  },
+  scale: 1.5,
+});
+
+gsap.to(".page7-crl-inner",{
+  scrollTrigger:{
+    trigger:`.page7-crl-inner`,
+    start:`top center`,
+    end:`bottom top`,
+    scroller:`#main`,
+    scrub:.5
+  },
+  backgroundColor : `#0a3bce91`,
+})
