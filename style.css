@@ -334,3 +334,54 @@ body {
   background-image: url(https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg);
   background-size: cover;
 }
+
+#page10 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a3cce;
+}
+
+.right-10 {
+  height: 100%;
+  width: 60%;
+  position: relative;
+  left: 40%;
+}
+
+#page10 > .right-10 > .right10-inner {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  height: 33.3%;
+  width: 100%;
+  font-family: a;
+  color: #fff;
+}
+
+#page10 > .right-10 > .right10-inner > h1 {
+  font-size: 2vw;
+}
+
+#page10 > .right-10 > .right10-inner > p {
+  font-size: 1.3vw;
+  width: 80%;
+  margin-top: 2vw;
+}
+
+#page11 {
+  position: relative;
+  height: 110vh;
+  width: 100vw;
+  background-color: #fff;
+  font-family: a;
+}
+
+#page11 > h1 {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  font-size: 4vw;
+  color: black;
+  font-weight: 100;
+}

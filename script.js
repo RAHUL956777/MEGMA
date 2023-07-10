@@ -303,19 +303,6 @@ function canvas1() {
   ./images/bridges00157.png
   ./images/bridges00160.png
   ./images/bridges00163.png
-  ./images/bridges00166.png
-  ./images/bridges00169.png
-  ./images/bridges00172.png
-  ./images/bridges00175.png
-  ./images/bridges00178.png
-  ./images/bridges00181.png
-  ./images/bridges00184.png
-  ./images/bridges00187.png
-  ./images/bridges00190.png
-  ./images/bridges00193.png
-  ./images/bridges00196.png
-  ./images/bridges00199.png
-  ./images/bridges00202.png
   `;
     return datas.split("\n")[index];
   }
